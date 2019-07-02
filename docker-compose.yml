@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: postgres:11.4-alpine
+    environment:
+      - POSTGRES_USER=test_pg_tap
+      - POSTGRES_PASSWORD=supersecret
+      - PGPASSWORD=supersecret
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+      - ./seeds:/seeds
+  pgtap:
+    image: hbpmip/pgtap:1.0.0-2
+    environment:
+      - DATABASE=awesome_hotel_booking
+      - USER=test_pg_tap
+      - PASSWORD=supersecret
+    depends_on:
+      - db
+    volumes:
+      - ./pgtap:/test
