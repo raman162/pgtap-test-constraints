@@ -86,3 +86,8 @@ All tests successful.
 Files=1, Tests=8,  0 wallclock secs ( 0.02 usr +  0.00 sys =  0.02 CPU)
 Result: PASS
 ```
+
+5. Stop Docker
+```
+docker-compose down
+```
