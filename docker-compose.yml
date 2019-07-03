@@ -7,7 +7,6 @@ services:
       - POSTGRES_PASSWORD=supersecret
       - PGPASSWORD=supersecret
     volumes:
-      - ./pg-data:/var/lib/postgresql/data
       - ./seeds:/seeds
   pgtap:
     image: hbpmip/pgtap:1.0.0-2
